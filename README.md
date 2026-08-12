@@ -1,4 +1,4 @@
-# Marcos Araújo
+# Marcos Henrique Melo de Araújo
 
 **Desenvolvedor Java Sênior | Backend & Sistemas Distribuídos**
 Spring Boot · Microserviços · DDD · PostgreSQL · Docker · CI/CD
