@@ -21,7 +21,6 @@ Rio Branco, Acre — Brasil (GMT-3) · Disponível para remoto
 
 - 🚀 **[Storm Commerce](https://github.com/marcostorm/storm-commerce)** — SaaS multi-tenant de e-commerce em produção, com deploy automatizado, backups em Cloudflare R2 e integração Mercado Pago. Meu laboratório de arquitetura full-stack e DevOps.
 - 🎓 Aprofundamento em **AWS, Kafka e Kubernetes** — fechando o loop entre teoria (mestrado) e prática de sistemas distribuídos modernos.
-- 📚 Estudos para **DATAPREV 2026** (Analista de TI — Desenvolvimento).
 
 ---
 
