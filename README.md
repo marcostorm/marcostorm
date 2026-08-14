@@ -1,5 +1,5 @@
 # Marcos Henrique Melo de Araújo
-Desenvolvedor Java Sênior | Backend & Sistemas Distribuídos<br>Spring Boot · APIs REST · DDD · PostgreSQL · Docker · CI/CD<br><br>10+ anos construindo e sustentando sistemas backend em produção nos setores governo, corporativo e produto próprio. Mestre em Ciência da Computação (UFAC) com pesquisa em dívida técnica e qualidade de código publicada em periódico internacional.<br><br>Rio Branco - AC, Brasil (GMT-3) · Disponível para remoto / Internacional
+10+ anos construindo e sustentando sistemas backend em produção nos setores governo, corporativo e produto próprio. Mestre em Ciência da Computação (UFAC) com pesquisa em dívida técnica e qualidade de código publicada em periódico internacional.<br><br>Rio Branco - AC, Brasil (GMT-3) · Disponível para remoto / Internacional
 
 
 ## 🌐 Socials:
@@ -22,8 +22,6 @@ Desenvolvedor Java Sênior | Backend & Sistemas Distribuídos<br>Spring Boot · 
 
 
 # 📊 GitHub Stats:
-![](https://github-readme-stats.shion.dev/api?username=marcostorm&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
-![](https://streak-stats.demolab.com/?user=marcostorm&theme=dark&hide_border=false)<br/>
 ![](https://github-readme-stats.shion.dev/api/top-langs/?username=marcostorm&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
 
 ---
