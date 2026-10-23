@@ -11,19 +11,21 @@
 ## 🚧 No que estou trabalhando agora
 
 ### Storm Lab: lab de IA engineering interno
-Infraestrutura própria de RAG, servidores MCP e (em breve) pipelines e agentes pra amplificar produtividade nos meus produtos. Não é oferta comercial; é ferramental pessoal de senior dev. Cada peça só avança quando a anterior provou valor em uso real.
+Infraestrutura própria de RAG, servidores MCP e workers autônomos pra amplificar produtividade nos meus produtos. Não é oferta comercial; é ferramental pessoal de senior dev. Cada peça só avança quando a anterior provou valor em uso real.
 
 Peças construídas:
 - **storm-lab-rag**: RAG local sobre meus códigos, docs e memórias curadas. Postgres + pgvector + `intfloat/multilingual-e5-small` em CPU, chunking por seção em markdown e size-based em código, ingestão incremental por hash. ~765 chunks em 9 projetos, watcher incremental via `storm-rag watch`. Exposto ao Claude Code via MCP (`search_my_code`, `list_projects`, `get_file_context`).
 - **storm-vps**: dashboard Streamlit (humano) + servidor MCP (agente) que leem o VPS Hostinger via SSH on-demand com Paramiko. Mesmo `collector.py` nas duas interfaces. 8 tools no MCP: 4 de leitura (health, containers, logs, tags de imagem) e 4 destrutivas com `confirm=False` retornando dry-run por padrão (restart, prune, deploy, rollback).
 - **storm-projects**: servidor MCP com estado git dos repos locais em `~/workspace/` e release amarrado ao fluxo real (tag `vYYYYMMDD-HHMM`, sem semver). Zero SSH, tudo via `git -C`. `release_commerce` desacopla git tag e deploy no VPS, retornando o próximo passo em vez de disparar sozinho.
 - **storm-lab-docs**: servidor MCP que lê docs institucionais em `.docx` (via python-docx), `.md`, `.html` e `.txt`. Validação de path via `relative_to(DOCS_ROOT)` bloqueia traversal. Fecha o gap de `.docx` no RAG.
+- **storm-agents**: stack 24/7 no VPS com Postgres + bot Telegram + worker `vps-watchdog` que tick a cada 30min via SSH loopback. Coleta health do VPS (containers, disco, uptime) e alerta no Telegram só em transição de estado, com dedup por `(agent, kind, subject)` em JSONB. Primeira peça do roadmap com worker vivo rodando continuamente, não só MCP on-demand.
 
-Próximas peças previstas: mais MCPs conforme fricção real aparecer, depois pipelines e workers (digest semanal, watchdog do VPS, orquestrador de backups) rodando num `storm-agents-runner` no VPS, e harness tuned com skills por projeto.
+Próximas peças previstas: mais workers no stack storm-agents conforme fricção aparecer (release-notifier, digest semanal, orquestrador de backups), observabilidade dos workers, cold mirror de backups em segundo provedor, harness tuned com skills por projeto.
 
 ### Produtos sob o Storm Lab
 - 🚀 **[Storm Commerce](https://github.com/marcostorm/storm-commerce)**: SaaS multi-tenant de e-commerce em produção, com deploy automatizado, backups em Cloudflare R2 e integração Mercado Pago. Laboratório de arquitetura full-stack e DevOps.
-- ⚖️ **GED - Editor Jurídico (visual law)**: editor jurídico com recursos de Visual Law em Spring Boot 3.5 + Angular 21 com Postgres.
+- ⚖️ **Visual Jud**: editor jurídico com recursos de Visual Law em Spring Boot 3.5 (arquitetura hexagonal) + Angular 21 standalone com Postgres.
+- 📚 **Paxiúba Literária**: CMS da revista literária Norte/Amazônia em Payload 3.88 + Next 16 + Postgres.
 - 🌳 **Calor & Verde Rio Branco**: pipeline geoespacial que cruza LST (Landsat), NDVI (Sentinel-2) e perda de vegetação por setor censitário IBGE pra gerar ranking de prioridade de plantio.
 
 ### Estudos
